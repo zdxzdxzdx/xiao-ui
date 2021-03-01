@@ -1,6 +1,6 @@
 <template>
     <div>
-       <Switch :value="y" @input="y=$event"/>
+       <Switch v-model:value="y"/>
     </div>
 </template>
 
@@ -14,7 +14,6 @@
     setup(){
       const y=ref(false)
       return {y}
-
     }
   }
 </script>
