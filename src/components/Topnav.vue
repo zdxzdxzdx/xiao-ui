@@ -2,7 +2,7 @@
 
         <div class="topnav">
             <div class="logo">LOGO</div>
-            <ul class="menu">
+            <ul class="menu" @click="toggleMenu">
 
                 <li>菜单1</li>
                 <li>菜单2</li>
@@ -15,8 +15,16 @@
 
 <script lang="ts">
 
-  export default  {
+  import {inject, Ref} from 'vue';
 
+  export default  {
+    setup(){
+      const menuVisible = inject<Ref<boolean>>('menuVisible');
+      const toggleMenu =()=>{
+        menuVisible.value = !menuVisible.value
+      }
+      return {toggleMenu}
+    }
   }
 </script>
 
@@ -25,6 +33,8 @@
         background: pink;
         display: flex;
         padding: 16px;
+        position: relative;
+        z-index: 10;
         > .logo{
             max-width: 6em;
             margin-right: auto;

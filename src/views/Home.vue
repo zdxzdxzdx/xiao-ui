@@ -5,8 +5,8 @@
             <h1>轱辘UI</h1>
             <h2>一个厉害的 UI 框架</h2>
             <p class="actions">
-                <a >GitHub</a>
-                <a>开始</a>
+                <a href="https://www.baidu.com/?tn=49055317_4_hao_pg">GitHub</a>
+                <Router-link to="/doc">开始</Router-link>
             </p>
         </div>
     </div>
