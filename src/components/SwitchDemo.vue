@@ -7,7 +7,7 @@
 <script lang="ts">
     import Switch from '../lib/Switch.vue'
     import { ref } from 'vue'
-  export default{
+    export default{
     components:{
       Switch
     },
