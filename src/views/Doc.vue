@@ -2,7 +2,7 @@
     <div class="layout">
         <Topnav class="nav"/>
         <div class="content">
-            <aside v-if="menuVisible">列表
+            <aside v-if="menuVisible">
                 <ol>
                     <li>
                         <router-link to="/doc/switch">Switch组件</router-link>
@@ -18,8 +18,7 @@
                     </li>
                 </ol>
             </aside>
-            <main><router-view/>
-                主内容</main>
+            <main><router-view/></main>
         </div>
     </div>
 </template>
@@ -83,12 +82,6 @@
                 padding: 4px 0;
             }
         }
-        /*@media (max-width: 500px) {*/
-        /*    position: fixed;*/
-        /*    top: 0;*/
-        /*    left: 0;*/
-        /*    padding-top: 70px;*/
-        /*}*/
         main{
             overflow: auto;
         }
