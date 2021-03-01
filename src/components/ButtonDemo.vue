@@ -2,9 +2,9 @@
     <div> Button示例</div>
     <h1>示例1</h1>
     <div>
-       <Button theme = "button"></Button>
-       <Button theme = "link"></Button>
-       <Button theme = "text"></Button>
+       <Button theme = "button">button</Button>
+       <Button theme = "link">link</Button>
+       <Button theme = "text">text</Button>
     </div>
 </template>
 

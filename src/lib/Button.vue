@@ -2,7 +2,7 @@
 
 
     <button v-bind="$attrs" class="gulu-button"
-            :class="{[`theme-${theme}`]: theme}">
+            :class="{[`gulu-${theme}`]: theme}">
         <slot/>
     </button>
 </template>
@@ -19,7 +19,7 @@
   }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
     $h: 32px;
     $border-color: #d9d9d9;
     $color: #333;
