@@ -1,5 +1,4 @@
 <template>
-
         <div class="topnav">
             <div class="logo">LOGO</div>
             <ul class="menu" >
@@ -8,8 +7,6 @@
             </ul>
             <span class="toggleAside" @click="toggleMenu"></span>
         </div>
-
-
 </template>
 
 <script lang="ts">
