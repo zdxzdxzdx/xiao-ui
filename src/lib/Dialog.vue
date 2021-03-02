@@ -3,11 +3,11 @@
         <div @click="onClickoverly" class="gulu-dialog-overlay"></div>
         <div class="gulu-dialog-wrapper">
             <div class="gulu-dialog">
-            <header>{{title}}
+            <header><slot name="title"/>
                 <span @click="close" class="gulu-dialog-close"></span>
             </header>
             <main>
-                <slot/>
+                <slot name="content"/>
             </main>
             <footer>
                 <Button level="main" @click="ok">OK</Button>
@@ -37,10 +37,6 @@
       cancel:{
         type:Function
       },
-      title:{
-        type: String,
-        default: '提示'
-      }
 
     },
     components: {Button},
