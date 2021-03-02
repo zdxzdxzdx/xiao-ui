@@ -1,0 +1,28 @@
+<template>
+    <div>
+
+        <div class="dialog-shawer"></div>
+        <div class="dialog-wrapper">
+            <header>标题</header>
+            <main>
+                <p>第一行字</p>
+                <p>第一行字</p>
+            </main>
+            <footer>
+                <Button>OK</Button>
+                <Button>Cancel</Button>
+            </footer>
+        </div>
+    </div>
+</template>
+<script lang="ts">
+  import Button from './Button.vue';
+
+  export default {
+    components: {Button}
+  };
+</script>
+
+<style scoped lang="scss">
+
+</style>
