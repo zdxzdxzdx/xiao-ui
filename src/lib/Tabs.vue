@@ -1,8 +1,6 @@
 <template>
     <div>
-        Tabs组件
-        <component :is="defaults[0]"/>
-        <component :is="defaults[1]"/>
+        <component v-for="(c,index) in defaults" :is="c" :key="index"/>
     </div>
 </template>
 
@@ -12,17 +10,24 @@
   export default {
     setup(props,context){
       const defaults = context.slots.default()
+      console.log(defaults)
       console.log(defaults[0].type=== Tab)
       defaults.forEach((tag)=>{
         if (tag.type!==Tab){
           throw new Error('Tabs子标签必须是Tab')
         }
       })
-      return {defaults}
+      const titles= defaults.map((tag)=>{
+        return tag.props.title
+      })
+
+      return {defaults,titles}
     }
 
   }
+
 </script>
+
 
 <style scoped lang="scss">
 
