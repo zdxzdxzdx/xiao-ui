@@ -1,20 +1,20 @@
 <template>
     <div class="gulu-tabs">
-        <div class="gulu-tabs-nav">
+        <div class="gulu-tabs-nav" ref="container">
             <div class="gulu-tabs-nav-item" :class="{selected:t===selected}"
-                 v-for="(t,index) in titles" :key="index" @click="select(t)">{{t}}
+                 v-for="(t,index) in titles" :key="index" @click="select(t)"
+                 :ref="el=>{if (el) navItems[index]=el}">{{t}}
             </div>
-            <div class="gulu-tabs-nav-indicator"></div>
+            <div class="gulu-tabs-nav-indicator" ref="indicator"></div>
         </div>
         <component class="gulu-tabs-content-item"
                    :class="{selected: c.props.title === selected }"
                    v-for="c in defaults" :is="c"/>
         </div>
 </template>
-
 <script lang="ts">
-
   import Tab from './Tab.vue';
+  import { computed,ref,onMounted,onUpdated } from 'vue';
 
   export default {
     props: {
@@ -24,6 +24,23 @@
     },
 
     setup(props, context) {
+      const navItems = ref<HTMLDivElement[]>([])
+      const indicator= ref<HTMLDivElement>(null)
+      const container= ref<HTMLDivElement>(null)
+      const x =()=>{
+        const divs = navItems.value;
+        console.log(divs)
+        const result = divs.filter(div=>div.classList.contains('selected'))[0]
+        console.log(result)
+        const {width}= result.getBoundingClientRect();
+        indicator.value.style.width= width+'px'
+        const {left: left1}=container.value.getBoundingClientRect();
+        const {left: left2} = result.getBoundingClientRect();
+        const left = left2-left1
+        indicator.value.style.left=left+'px'
+      }
+        onMounted(x)
+        onUpdated(x)
       const defaults = context.slots.default();
       console.log(defaults);
       console.log(defaults[0].type === Tab);
@@ -42,7 +59,7 @@
       };
       console.log(titles);
 
-      return {defaults, titles, select};
+      return {defaults, titles, select,navItems,indicator,container};
     }
   };
 
@@ -79,6 +96,7 @@
                 left: 0;
                 bottom: -1px;
                 width: 100px;
+                transition: all 250ms;
             }
         }
 
