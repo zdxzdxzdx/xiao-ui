@@ -10,11 +10,11 @@
         <component class="gulu-tabs-content-item"
                    :class="{selected: c.props.title === selected }"
                    v-for="c in defaults" :is="c"/>
-        </div>
+    </div>
 </template>
 <script lang="ts">
   import Tab from './Tab.vue';
-  import { ref,onMounted,onUpdated } from 'vue';
+  import {ref, onMounted, onUpdated, watchEffect} from 'vue';
 
   export default {
     props: {
@@ -24,20 +24,25 @@
     },
 
     setup(props, context) {
-      const selectedItem = ref<HTMLDivElement>(null)
-      const indicator= ref<HTMLDivElement>(null)
-      const container= ref<HTMLDivElement>(null)
-      const x =()=>{
+      const selectedItem = ref<HTMLDivElement>(null);
+      const indicator = ref<HTMLDivElement>(null);
+      const container = ref<HTMLDivElement>(null);
+      // watchEffect(
 
-        const {width}= selectedItem.value.getBoundingClientRect();
-        indicator.value.style.width= width+'px'
-        const {left: left1}=container.value.getBoundingClientRect();
+      const x =() => {
+        const {width} = selectedItem.value.getBoundingClientRect();
+        indicator.value.style.width = width + 'px';
+        const {left: left1} = container.value.getBoundingClientRect();
         const {left: left2} = selectedItem.value.getBoundingClientRect();
-        const left = left2-left1
-        indicator.value.style.left=left+'px'
+        const left = left2 - left1;
+        indicator.value.style.left = left + 'px';
+
       }
+
+
         onMounted(x)
         onUpdated(x)
+
       const defaults = context.slots.default();
       console.log(defaults);
       console.log(defaults[0].type === Tab);
@@ -54,9 +59,8 @@
       const select = (title: string) => {
         context.emit('update:selected', title);
       };
-      console.log(titles);
 
-      return {defaults, titles, select,indicator,container,selectedItem};
+      return {defaults, titles, select, indicator, container, selectedItem};
     }
   };
 
@@ -73,6 +77,7 @@
             color: $color;
             border-bottom: 1px solid $border-color;
             position: relative;
+
             &-item {
                 padding: 8px 0;
                 margin: 0 16px;
@@ -86,6 +91,7 @@
                     color: $blue;
                 }
             }
+
             &-indicator {
                 position: absolute;
                 height: 3px;
@@ -99,6 +105,7 @@
 
         &-content {
             padding: 8px 0;
+
             &-item {
                 display: none;
 
