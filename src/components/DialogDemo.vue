@@ -2,7 +2,10 @@
     <div>Dialog示例</div>
        <Button @click="toggle">toggle</Button>
     <Dialog v-model:visible="x" :close-on-click-overly="false"
-    :ok="f1" :cancel="f2"></Dialog>
+    :ok="f1" :cancel="f2" title="警告">
+        <div>ni</div>
+        <div>hao</div>
+    </Dialog>
 </template>
 
 <script lang="ts">
