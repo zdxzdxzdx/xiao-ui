@@ -1,5 +1,5 @@
 <template>
-    <div>
+
         <div class="gulu-dialog-overlay"></div>
         <div class="gulu-dialog-wrapper">
             <div class="gulu-dialog">
@@ -16,6 +16,7 @@
             </footer>
         </div>
     </div>
+
 </template>
 <script lang="ts">
   import Button from './Button.vue';
