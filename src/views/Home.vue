@@ -44,7 +44,9 @@
     .topnavAndbanner {
         background: rgb(255,255,255);
         background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,249,247,1) 40%, rgba(251,240,238,1) 100%);
-
+        /*border-bottom-left-radius: 50% 40px;*/
+        /*border-bottom-right-radius: 50% 40px;*/
+        clip-path: ellipse(80% 60% at 50% 40%);
     }
     .feature {
         > svg{
