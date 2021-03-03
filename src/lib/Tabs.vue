@@ -11,9 +11,6 @@
         <div class="gulu-tabs-content">
             <component :is="current" :key="current.props.title" />
         </div>
-<!--        <component class="gulu-tabs-content-item"-->
-<!--                   :class="{selected: c.props.title === selected }"-->
-<!--                   v-for="c in defaults" :is="c"/>-->
     </div>
 </template>
 
