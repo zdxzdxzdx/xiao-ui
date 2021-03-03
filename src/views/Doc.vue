@@ -1,6 +1,6 @@
 <template>
     <div class="layout">
-        <Topnav class="nav"/>
+        <Topnav :toggle-menu-button-visible="true" class="nav"/>
         <div class="content">
             <aside v-if="menuVisible">
                 <ol>
