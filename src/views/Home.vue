@@ -1,6 +1,6 @@
 <template>
     <div>
-    <div class="topnavAndbanner">
+    <div class="topnavAndBanner">
         <Topnav/>
         <div class="banner">
             <h1>轱辘UI</h1>
@@ -12,16 +12,29 @@
         </div>
     </div>
         <div class="feature">
-            <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-Vue"></use>
-            </svg>
-            <svg class="icon" aria-hidden="true">
+            <ul>
+                <li>
+               <svg  >
+                   <use xlink:href="#icon-Vue"></use>
+               </svg>
+               <h3>基于Vue 3</h3>
+               <p>使用了Vue3 Composition API</p>
+           </li>
+            <li>
+            <svg >
                 <use xlink:href="#icon-ts"></use>
             </svg>
-            <svg class="icon" aria-hidden="true">
+                <h3>基于Typescript</h3>
+                <p>源代码采用TypeScript</p>
+            </li>
+            <li>
+            <svg  >
                 <use xlink:href="#icon-light"></use>
             </svg>
-
+                <h3>代码易读</h3>
+                <p>每个组件的源代码都及其简单</p>
+            </li>
+            </ul>
         </div>
 
     </div>
@@ -41,19 +54,52 @@
   $button-background: #0355ff;
   $border-radius: 50px;
 
-    .topnavAndbanner {
+    .topnavAndBanner {
         background: rgb(255,255,255);
         background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,249,247,1) 40%, rgba(251,240,238,1) 100%);
         /*border-bottom-left-radius: 50% 40px;*/
         /*border-bottom-right-radius: 50% 40px;*/
         clip-path: ellipse(80% 60% at 50% 40%);
     }
-    .feature {
-        > svg{
-            width: 64px;
-            height: 64px;
-        }
-    }
+  .feature{
+      //
+      margin: 64px auto;
+      width: 400px;
+      @media (min-width: 800px) {
+          width: 800px;
+      }
+      @media (min-width: 1200px) {
+          width: 1200px;
+      }
+      >ul {
+          display: flex;
+          flex-wrap: wrap;
+          >li {
+              width: 400px;
+              margin: 16px 0;
+              display: grid;
+              justify-content: start;
+              align-content: space-between;
+              grid-template-areas:
+                      "icon title"
+                      "icon text";
+              grid-template-columns: 80px auto;
+              grid-template-rows: 1fr auto;
+              >svg {
+                  grid-area: icon;
+                  width: 64px;
+                  height: 64px;
+              }
+              >h3 {
+                  grid-area: title;
+                  font-size: 28px;
+              }
+              >p {
+                  grid-area: text
+              }
+          }
+      }
+  }
     .banner{
         padding: 100px 0;
         display: flex;
