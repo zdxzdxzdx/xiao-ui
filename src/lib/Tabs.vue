@@ -5,15 +5,15 @@
                  :ref="el => { if (t===selected) selectedItem = el }" @click="select(t)"
                  :class="{selected: t=== selected}"
                  :key="index">{{t}}</div>
-            <div class="gulu-tabs-nav-indicator"  ref="indicator">aaaaa</div>
+            <div class="gulu-tabs-nav-indicator"  ref="indicator"></div>
         </div>
 
-<!--        <div class="gulu-tabs-content">-->
-<!--            <component :is="current" :key="current.props.title" />-->
-<!--        </div>-->
-        <component class="gulu-tabs-content-item"
-                   :class="{selected: c.props.title === selected }"
-                   v-for="c in defaults" :is="c"/>
+        <div class="gulu-tabs-content">
+            <component :is="current" :key="current.props.title" />
+        </div>
+<!--        <component class="gulu-tabs-content-item"-->
+<!--                   :class="{selected: c.props.title === selected }"-->
+<!--                   v-for="c in defaults" :is="c"/>-->
     </div>
 </template>
 
@@ -23,7 +23,8 @@
     computed,
     ref,
     watchEffect,
-    onMounted
+    onMounted,
+    onUpdated
   } from 'vue'
   export default {
     props: {
@@ -35,8 +36,9 @@
       const selectedItem = ref < HTMLDivElement > (null)
       const indicator = ref< HTMLDivElement > (null)
       const container = ref < HTMLDivElement > (null)
-      onMounted(() => {
-        watchEffect(() => {
+      // onMounted(() => {
+      //   watchEffect(() => {
+      const x =()=>{
           const {
             width
           } = selectedItem.value.getBoundingClientRect()
@@ -49,8 +51,11 @@
           } = selectedItem.value.getBoundingClientRect()
           const left = left2 - left1
           indicator.value.style.left = left + 'px'
-        })
-      })
+        }
+        // )
+      // })
+      onMounted(x)
+      onUpdated(x)
       const defaults = context.slots.default()
       defaults.forEach((tag) => {
         if (tag.type !== Tab) {
