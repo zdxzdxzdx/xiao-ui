@@ -1,5 +1,5 @@
 <template>
-    <div class="Topaddbanner">
+    <div class="topnavAndbanner">
         <Topnav/>
         <div class="banner">
             <h1>轱辘UI</h1>
@@ -21,7 +21,12 @@
 </script>
 
 <style scoped lang="scss">
-    .Topaddbanner {
+
+  $font-color:#474e87;
+  $button-background: #0355ff;
+  $border-radius: 50px;
+
+    .topnavAndbanner {
         background: rgb(255,255,255);
         background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,249,247,1) 40%, rgba(251,240,238,1) 100%);
 
@@ -32,18 +37,19 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        /*background: lightblue;*/
+        color: $font-color;
           > .actions{
              padding: 8px 0;
              a {
                  margin:0 8px;
-                 background: #fff;
+                 background:  #fff;
                  display: inline-block;
-                 $h: 28px;
-                 height: $h;
-                 line-height: $h;
-                 border-radius: $h/2;
-                 padding: 0 8px;
+                 border-radius: $border-radius;
+                 padding: 8px 24px;
+                 color: #617193;
+                 :hover {
+                     text-decoration: none;
+                 }
              }
          }
     }

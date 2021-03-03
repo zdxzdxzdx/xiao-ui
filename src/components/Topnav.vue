@@ -25,8 +25,10 @@
 </script>
 
 <style scoped lang="scss">
+    $font-color:#474e87;
     .topnav {
         /*background: pink;*/
+        color: $font-color;
         display: flex;
         padding: 16px;
         position: fixed;
