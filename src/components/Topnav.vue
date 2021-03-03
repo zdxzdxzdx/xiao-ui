@@ -1,10 +1,10 @@
 <template>
         <div class="topnav">
-            <div class="logo">
+            <router-link to="/" class="logo">
                 <svg class="icon" aria-hidden="true">
                     <use xlink:href="#icon-smile1"></use>
                 </svg>
-            </div>
+            </router-link>
             <ul class="menu" >
                 <li>
                     <router-link to="/doc">文档</router-link>
