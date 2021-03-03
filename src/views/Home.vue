@@ -1,4 +1,5 @@
 <template>
+    <div>
     <div class="topnavAndbanner">
         <Topnav/>
         <div class="banner">
@@ -9,6 +10,20 @@
                 <Router-link to="/doc">开始</Router-link>
             </p>
         </div>
+    </div>
+        <div class="feature">
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-Vue"></use>
+            </svg>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-ts"></use>
+            </svg>
+            <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-light"></use>
+            </svg>
+
+        </div>
+
     </div>
 </template>
 
@@ -30,6 +45,12 @@
         background: rgb(255,255,255);
         background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,249,247,1) 40%, rgba(251,240,238,1) 100%);
 
+    }
+    .feature {
+        > svg{
+            width: 64px;
+            height: 64px;
+        }
     }
     .banner{
         padding: 100px 0;

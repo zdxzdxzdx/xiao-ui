@@ -8,13 +8,14 @@ ul,ol{
   list-style: none;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
-  &:hover{
+
+  &:hover {
     text-decoration: underline;
   }
-
+}
   body {
     font-size: 16px;
     font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica,
@@ -28,5 +29,11 @@ a{
   h1,h2,h3,h4,h5,h6 {
     font-weight: normal;
   }
+  .icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
 
-}
+
