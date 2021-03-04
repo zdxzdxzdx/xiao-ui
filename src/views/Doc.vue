@@ -51,7 +51,7 @@
 </script>
 
 <style scoped lang="scss">
-    $aside-index = 10
+    $aside-index : 10;
     .layout {
         display: flex;
         flex-direction: column;
