@@ -12,7 +12,7 @@
                     <Button>查看代码</Button>
                 </div>
                 <div class="demo-code">
-                    <pre>&lt;Switch v-model:value="bool" /&gt;</pre>
+                    <pre >{{Switch1Demo.__sourceCode}}</pre>
                 </div>
             </div>
             <div class="demo">
@@ -24,7 +24,7 @@
                     <Button>查看代码</Button>
                 </div>
                 <div class="demo-code">
-                    <pre>&lt;Switch v-model:value="bool" disabled /&gt;</pre>
+                    <pre>{{Switch2Demo.__sourceCode}}</pre>
                 </div>
             </div>
         </div>
@@ -50,7 +50,7 @@
     },
     setup(){
       const bool=ref(false)
-      return {bool}
+      return {bool,Switch1Demo,Switch2Demo}
     }
   }
 </script>
