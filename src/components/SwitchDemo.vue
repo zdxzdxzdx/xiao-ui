@@ -14,10 +14,8 @@
     import { ref } from 'vue'
     import Switch1Demo from './Switch1.demo.vue'
     import Switch2Demo from './Switch2.demo.vue'
-    import 'prismjs';
-    import 'prismjs/themes/prism-okaidia.css'
     import Demo from './Demo.vue';
-     const Prism = (window as any).Prism
+
 
     export default{
     components:{
@@ -25,7 +23,7 @@
     },
     setup(){
       const bool=ref(false)
-      return {bool,Switch1Demo,Switch2Demo,Prism}
+      return {bool,Switch1Demo,Switch2Demo}
     }
   }
 </script>
