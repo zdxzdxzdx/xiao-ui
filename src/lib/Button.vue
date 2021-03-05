@@ -3,7 +3,6 @@
         <span v-if="loading" class="gulu-loadingIndicator"></span>
         <slot/>
     </button>
-
 </template>
 
 <script lang="ts">
