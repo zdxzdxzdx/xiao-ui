@@ -2,6 +2,7 @@
 
 rm -rf dist &&
 yarn build &&
+
 cd dist &&
 git init &&
 git add . &&

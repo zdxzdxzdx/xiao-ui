@@ -52,14 +52,13 @@
           close()
         }
       }
-
-        const ok = ()=>{
-          if (props.ok?.()!==false){
-            close()
-          }
+      const ok = () => {
+        if (props.ok && props.ok() !== false) {
+          close()
         }
+      }
         const cancel = ()=>{
-        props.cancel?.()
+          props.cancel && props.cancel()
           close()
         }
       return {close,onClickoverly,ok,cancel}
