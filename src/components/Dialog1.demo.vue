@@ -16,14 +16,15 @@
 </template>
 
 <script lang="ts">
-  import Demo from './Demo.vue';
-  import Button from '../lib/Button.vue';
+  import {Dialog} from '../lib/index'
+  import {Button} from '../lib/index'
   import {ref} from 'vue';
   export default {
-    components: {Demo},
+    components: {Dialog,Button},
     setup(){
       const x= ref(false);
       const toggle= ()=>{
+        console.log("点击了")
         x.value=!x.value
       }
       const f1 = ()=>{

@@ -3,13 +3,13 @@
 打开终端运行下列命令：
 
 ```
-npm install xiao-ui
+npm install xiao-ui-1
 ```
 
 或
 
 ```
-yarn add xiao-ui
+yarn add xiao-ui-1
 ```
 
 下一节：[开始使用](#/doc/get-started)
