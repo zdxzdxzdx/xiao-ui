@@ -6,9 +6,15 @@
 
 </template>
 
-<script lang="ts">
+<script lang="ts" setup="props">
   import {computed} from 'vue';
-
+  declare const props:{
+    theme?: 'button' | 'text' |'link';
+    size?: 'normal' | 'big' | 'small';
+    level?: 'normal' | 'main' | 'danger';
+    disabled?: boolean;
+    loading?: boolean;
+  }
   export default {
     props: {
       theme: {
@@ -32,21 +38,21 @@
         default: false
       }
     },
+  }
 
-    setup(props) {
       const {theme, size, level} = props;
-      const classes = computed(() => {
+     export const classes = computed(() => {
         return {
           [`gulu-theme-${theme}`]: theme,
           [`gulu-size-${size}`]: size,
           [`gulu-level-${level}`]: level,
         };
       });
-      return {classes};
-    }
 
 
-  };
+
+
+
 </script>
 
 <style lang="scss">
