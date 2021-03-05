@@ -5,9 +5,10 @@
 </template>
 
 <script lang="ts">
-
-  export default  {
-
+    import {defineComponent} from 'vue'
+    defineComponent
+    export default  {
+        name:"xiaoTab"
   }
 </script>
 

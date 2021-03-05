@@ -14,25 +14,30 @@
     </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup="props,context" >
   import Tab from './Tab.vue'
   import {
     computed,
     ref,
     watchEffect,
     onMounted,
-    onUpdated
+    onUpdated,
+    SetupContext,
+    Component
   } from 'vue'
+
+  declare const props: {selected:string}
+  declare const context: SetupContext
   export default {
     props: {
       selected: {
         type: String
       }
     },
-    setup(props, context) {
-      const selectedItem = ref < HTMLDivElement > (null)
-      const indicator = ref< HTMLDivElement > (null)
-      const container = ref < HTMLDivElement > (null)
+  }
+     export  const selectedItem = ref < HTMLDivElement > (null)
+     export  const indicator = ref< HTMLDivElement > (null)
+     export  const container = ref < HTMLDivElement > (null)
       onMounted(() => {
         watchEffect(() => {
           const {
@@ -50,32 +55,23 @@
         },{flush:'post'})
       })
 
-      const defaults = context.slots.default()
-      defaults.forEach((tag) => {
-        if (tag.type !== Tab) {
+      export const defaults = context.slots.default()
+      defaults.forEach( (tag) => {
+        if ((tag.type as Component).name !==Tab.name){
           throw new Error('Tabs 子标签必须是 Tab')
         }
       })
-      const current = computed(() => {
+     export const current = computed(() => {
         return defaults.find(tag => tag.props.title === props.selected)
       })
-      const titles = defaults.map((tag) => {
+     export const titles = defaults.map((tag) => {
         return tag.props.title
       })
-      const select = (title: string) => {
+     export const select = (title: string) => {
         context.emit('update:selected', title)
       }
-      return {
-        current,
-        defaults,
-        titles,
-        select,
-        selectedItem,
-        indicator,
-        container
-      }
-    }
-  }
+
+
 </script>
 
 <style lang="scss">
