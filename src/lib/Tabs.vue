@@ -33,9 +33,8 @@
       const selectedItem = ref < HTMLDivElement > (null)
       const indicator = ref< HTMLDivElement > (null)
       const container = ref < HTMLDivElement > (null)
-      // onMounted(() => {
-      //   watchEffect(() => {
-      const x =()=>{
+      onMounted(() => {
+        watchEffect(() => {
           const {
             width
           } = selectedItem.value.getBoundingClientRect()
@@ -48,11 +47,9 @@
           } = selectedItem.value.getBoundingClientRect()
           const left = left2 - left1
           indicator.value.style.left = left + 'px'
-        }
-        // )
-      // })
-      onMounted(x)
-      onUpdated(x)
+        },{flush:'post'})
+      })
+
       const defaults = context.slots.default()
       defaults.forEach((tag) => {
         if (tag.type !== Tab) {
