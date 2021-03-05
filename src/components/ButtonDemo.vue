@@ -21,7 +21,6 @@
     },
       setup(){
       const onClick = ()=>{
-        console.log('hi');
       }
       return {
         onClick,

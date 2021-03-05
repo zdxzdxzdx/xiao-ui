@@ -24,7 +24,7 @@
     setup(){
       const x= ref(false);
       const toggle= ()=>{
-        console.log("点击了")
+
         x.value=!x.value
       }
       const f1 = ()=>{
