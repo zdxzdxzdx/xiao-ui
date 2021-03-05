@@ -1,10 +1,8 @@
+
 <template>
     <button @click="toggle" class="gulu-switch" :class="{'gulu-checked':value}">
         <span></span></button>
-
-
 </template>
-
 <script lang="ts">
   export default {
     props: {
@@ -58,7 +56,7 @@
         }
 
         &.gulu-checked:active {
-            > span {
+            >span {
                 width: $h2+4px;
                 margin-left: -4px
             }
