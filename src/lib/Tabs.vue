@@ -21,7 +21,6 @@
     ref,
     watchEffect,
     onMounted,
-    onUpdated,
     SetupContext,
     Component
   } from 'vue'

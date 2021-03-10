@@ -48,10 +48,6 @@
         };
       });
 
-
-
-
-
 </script>
 
 <style lang="scss">
