@@ -5,7 +5,7 @@
     <Demo :component="Button3Demo"/>
     <Demo :component="Button4Demo"/>
     <Demo :component="Button5Demo"/>
-
+    <div>下一节:<a href="#/doc/dialog">    Dialog组件</a></div>
 </template>
 
 <script lang="ts">
@@ -34,5 +34,7 @@
 </script>
 
 <style scoped lang="scss">
-
+    a{
+        color: #0366d6;
+    }
 </style>

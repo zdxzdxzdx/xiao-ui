@@ -41,7 +41,7 @@
     $font-color:#474e87;
 
     .topnav {
-        /*background: pink;*/
+
         color: $font-color;
         display: flex;
         padding: 16px;
@@ -78,10 +78,11 @@
             left: 16px;
             top: 50%;
             transform: translateY(-50%);
-            background: fade_out(black,0.9);
+            /*background: fade_out(black,0.9);*/
 
         }
         @media (max-width:500px) {
+            background: #ffffff;
            > .menu{
                display: none;
            }

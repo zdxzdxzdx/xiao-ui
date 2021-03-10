@@ -5,7 +5,7 @@
             <Demo :component="Switch1Demo"/>
             <Demo :component="Switch2Demo"/>
         </div>
-
+        <div>下一节:<a href="#/doc/button">    Button组件</a></div>
     </div>
 </template>
 
@@ -30,6 +30,9 @@
 
 <style scoped lang="scss">
     $border-color: #d9d9d9;
+    a{
+        color: #0366d6;
+    }
     .demo {
         border: 1px solid $border-color;
         margin: 16px 0 32px;

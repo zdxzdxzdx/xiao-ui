@@ -7,7 +7,7 @@ export default {
   base:'./',
   assetsDir:"assets",
   plugins: [md()],
-  vueCustomBlockTransforms: {
+    vueCustomBlockTransforms: {
     demo: (options) => {
       const { code, path } = options
       const file = fs.readFileSync(path).toString()

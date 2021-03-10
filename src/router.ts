@@ -11,6 +11,7 @@ import intro from './markdown/intro.md';
 import install from './markdown/install.md';
 import getStarted from './markdown/get-started.md';
 
+
 const history = createWebHashHistory();
 const md = string => h(Markdown, {content: string, key: string});
 export const router = createRouter({
@@ -26,7 +27,9 @@ export const router = createRouter({
         {path: 'switch', component: SwitchDemo},
         {path: 'button', component: ButtonDemo},
         {path: 'dialog', component: DialogDemo},
-        {path: 'tabs', component: TabsDemo}
+        {path: 'tabs', component: TabsDemo},
+
+
       ]
     },
   ]

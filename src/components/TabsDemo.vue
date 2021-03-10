@@ -1,6 +1,7 @@
 <template>
         <h1>Tabs示例</h1>
        <Demo :component="Tabs1Demo"/>
+
 </template>
 
 <script lang="ts">

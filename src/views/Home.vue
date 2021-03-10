@@ -3,10 +3,10 @@
     <div class="topnavAndBanner">
         <Topnav/>
         <div class="banner">
-            <h1>轱辘UI</h1>
-            <h2>一个厉害的 UI 框架</h2>
+            <h1>Xiao-UI</h1>
+            <h2>基于Vue3的 UI 框架</h2>
             <p class="actions">
-                <a href="https://www.baidu.com/?tn=49055317_4_hao_pg">GitHub</a>
+                <a href="https://github.com/zdxzdxzdx/xiao-ui">GitHub</a>
                 <Router-link to="/doc">开始</Router-link>
             </p>
         </div>

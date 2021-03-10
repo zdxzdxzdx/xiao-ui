@@ -2,10 +2,10 @@
     <h1>Dialog示例</h1>
    <Demo :component="Dialog1Demo"/>
     <Demo :component="Dialog2Demo"/>
+    <div>下一节:<a href="#/doc/tabs">  Tabs组件</a></div>
 </template>
 
 <script lang="ts">
-
     import Demo from './Demo.vue';
     import  Dialog1Demo from './Dialog1.demo.vue'
     import  Dialog2Demo from './Dialog2.demo.vue'
@@ -22,5 +22,8 @@
 </script>
 
 <style scoped lang="scss">
+    a{
+        color: #0366d6;
+    }
 
 </style>
