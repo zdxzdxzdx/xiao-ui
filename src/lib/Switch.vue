@@ -3,20 +3,20 @@
     <button @click="toggle" class="gulu-switch" :class="{'gulu-checked':value}">
         <span></span></button>
 </template>
-<script lang="ts" setup="props,context">
-    import {ref,SetupContext} from 'vue'
-    declare const props:{value:boolean}
-    declare const context:SetupContext
+<script lang="ts" >
+    import {ref} from 'vue'
 
   export default {
     props: {
       value: Boolean
     },
-  }
-      export const toggle = () => {
+    setup(props,context){
+      const toggle = () => {
         context.emit('update:value', !props.value);
       };
-
+      return {toggle}
+    }
+  }
 
 
 </script>
